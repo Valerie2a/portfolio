@@ -1,0 +1,177 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+/* -------------------
+   Section Contact
+------------------- */
+.contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: $text-color;
+
+  h2 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    color: $secondary-color;
+  }
+
+  /* Message de succès (aria-live dans le JSX) */
+  .form-success {
+    margin: 0 0 1rem;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    background: color.mix($primary-color, transparent, 15%);
+  }
+}
+
+/* Formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+
+    /* Responsive */
+    @media (max-width: 640px) { flex-direction: column; }
+
+    div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.8rem;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    /* Fond clair pour meilleure lisibilité */
+    /* Si tu n'as pas $background-light, remplace par #ffffff */
+    background: if(global-variable-exists(background-light), $background-light, #ffffff);
+    color: $text-color;
+    transition: border-color .15s ease, box-shadow .15s ease;
+
+    &:focus {
+      outline: 2px solid transparent; /* évite double contour */
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px color.mix($primary-color, transparent, 25%);
+    }
+  }
+
+  textarea { min-height: 120px; }
+
+  button {
+    background: $primary-color;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: background .2s ease, transform .06s ease;
+
+    &:hover { background: color.adjust($primary-color, $lightness: -10%); }
+    &:active { transform: translateY(1px); }
+  }
+
+  /* Honeypot anti-spam (champ invisible) */
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px; height: 1px;
+    overflow: hidden;
+  }
+}
+
+/* -------------------
+   Section About (Formation)
+------------------- */
+.about__formation {
+  margin-top: 2rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+    color: $primary-color;
+  }
+
+  /* Mise en forme : formation sur une ligne, école et dates à la ligne */
+  .school, .dates {
+    display: block; /* force le retour à la ligne */
+  }
+
+  .school {
+    font-weight: 700;
+    color: $primary-color;
+    margin-top: .25rem;
+  }
+
+  .dates {
+    font-size: .9rem;
+    color: $secondary-color;
+    margin-top: .15rem;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: bold;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+/* -------------------
+   Footer + réseaux sociaux
+------------------- */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  padding: 1.25rem 1rem;
+
+  /* Fond clair et séparation subtile */
+  background: if(global-variable-exists(background-light), $background-light, #f8fafc);
+  color: $text-color;
+  border-top: 1px solid $border-color;
+  flex-wrap: wrap;
+
+  .footer__socials {
+    display: flex;
+    gap: 1rem;
+    margin-left: .5rem;
+
+    a {
+      color: $text-color;
+      font-size: 1.4rem; /* taille des icônes react-icons */
+      display: inline-flex;
+      align-items: center;
+      transition: color .25s ease, transform .06s ease;
+
+      &:hover {
+        color: $primary-color;
+        transform: translateY(-1px);
+      }
+      &:focus {
+        outline: 2px solid $primary-color;
+        outline-offset: 2px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
