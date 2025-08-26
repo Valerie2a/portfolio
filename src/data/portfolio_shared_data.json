@@ -27,7 +27,7 @@
       "slug": "kasa",
       "title": "Kasa — Plateforme de locations",
       "description": "SPA React avec routing, composants réutilisables (galerie, collapse, tags), gestion du focus visible et accessibilité soignée. Responsive complet et score Lighthouse élevé.",
-      "tech": ["React", "React Router", "SCSS", "Accessibility"],
+      "tech": ["React", "React Router", "SCSS", "Accessibilité"],
       "images": [
         "images/projects/kasa/kasa-1.png",
         "images/projects/kasa/kasa-2.png",
@@ -43,7 +43,7 @@
       "title": "OhMyFood — Mobile-first & animations",
       "description": "Intégration mobile-first d’un site de restaurants, animations CSS (skeleton, loaders, transitions).",
       "difficulty": "Organisation BEM, accessibilité, micro-interactions performantes.",
-      "tech": ["HTML", "Sass", "BEM", "Accessibility"],
+      "tech": ["HTML", "Sass", "BEM", "Accessibilité"],
       "demo": "https://valerie2a.github.io/OpenclassroomsProject/",
       "repo": "https://github.com/Valerie2a/OpenclassroomsProject",
       "images": [
@@ -72,7 +72,7 @@
       "slug": "booki",
       "title": "Booki — Intégration HTML/CSS",
       "description": "Intégration responsive à partir d’une maquette Figma, sémantique HTML et bonnes pratiques d’accessibilité.",
-      "tech": ["HTML", "CSS", "Figma", "A11y"],
+      "tech": ["HTML", "CSS", "Figma", "Accessibilité"],
       "images": [
         "images/projects/booki/booki-1.png",
         "images/projects/booki/booki-2.png",
