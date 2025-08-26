@@ -8,6 +8,7 @@ import BubbleBackground from "./components/BubbleBackground";
 import shared from "./data/portfolio_shared_data.json"; 
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
+
 export default function App() {
   useEffect(() => {
     const { name, title, summary } = shared.profile || {};

@@ -6,7 +6,7 @@ export default function Carousel({ images = [], alt, className = "" }) {
   const [current, setCurrent] = useState(0);
 
   if (!images || images.length === 0) {
-    return null; // rien à afficher si pas d'image
+    return null; 
   }
 
   const prevSlide = () => {

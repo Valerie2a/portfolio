@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 
-// Génère quelques bulles animées (sobre) + respect du prefers-reduced-motion
 export default function BubbleBackground(){
   useEffect(()=>{
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches

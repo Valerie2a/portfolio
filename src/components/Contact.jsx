@@ -8,7 +8,7 @@ export default function Contact() {
     email: "",
     company: "",
     message: "",
-    website: "" // honeypot (doit rester vide)
+    website: "" 
   });
   const [status, setStatus] = useState({ sent: false, error: "" });
 
@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <h2>Entrer en contact</h2>
+      <h2>Me contacter</h2>
       <p>
         Si vous avez des questions, une opportunité d'emploi ou un projet en tête,
         n'hésitez pas à me contacter. Je suis impatiente de discuter de la manière

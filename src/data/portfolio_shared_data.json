@@ -17,7 +17,9 @@
   { "name": "Vite", "icon": "icons/vite.svg" },
   { "name": "Git",  "icon": "icons/git.svg" },
   { "name": "GitHub", "icon": "icons/github.svg" },
-  { "name": "Lighthouse / Perf & SEO", "icon": "icons/lighthouse.svg" }
+  { "name": "Lighthouse / Perf & SEO", "icon": "icons/lighthouse.svg" },
+  { "name": "MongoDB", "icon": "icons/mongodb.svg" },
+  { "name": "Node.js", "icon": "icons/nodedotjs.svg" }
 ],
 
   "projects": [
@@ -25,7 +27,7 @@
       "slug": "kasa",
       "title": "Kasa — Plateforme de locations",
       "description": "SPA React avec routing, composants réutilisables (galerie, collapse, tags), gestion du focus visible et accessibilité soignée. Responsive complet et score Lighthouse élevé.",
-      "tech": ["React", "React Router", "SCSS", "A11y"],
+      "tech": ["React", "React Router", "SCSS", "Accessibility"],
       "images": [
         "images/projects/kasa/kasa-1.png",
         "images/projects/kasa/kasa-2.png",
@@ -41,7 +43,7 @@
       "title": "OhMyFood — Mobile-first & animations",
       "description": "Intégration mobile-first d’un site de restaurants, animations CSS (skeleton, loaders, transitions).",
       "difficulty": "Organisation BEM, accessibilité, micro-interactions performantes.",
-      "tech": ["HTML", "Sass", "BEM", "A11y"],
+      "tech": ["HTML", "Sass", "BEM", "Accessibility"],
       "demo": "https://valerie2a.github.io/OpenclassroomsProject/",
       "repo": "https://github.com/Valerie2a/OpenclassroomsProject",
       "images": [
