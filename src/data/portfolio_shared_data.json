@@ -26,20 +26,43 @@
       "title": "Kasa — Plateforme de locations",
       "description": "SPA React avec routing, composants réutilisables (galerie, collapse, tags), gestion du focus visible et accessibilité soignée. Responsive complet et score Lighthouse élevé.",
       "tech": ["React", "React Router", "SCSS", "A11y"],
-      "image": "https://placehold.co/600x360?text=Kasa",
+      "images": [
+        "images/projects/kasa/kasa-1.png",
+        "images/projects/kasa/kasa-2.png",
+        "images/projects/kasa/kasa-3.png"
+      ],
       "imageAlt": "Aperçu du projet Kasa",
-      "demo": "https://TODO-demo-kasa",
+      "demo": "https://valerie2a.github.io/Kasa/",
       "repo": "https://github.com/Valerie2a/Kasa.git",
       "difficulty": "J’ai dû comprendre et implémenter React Router pour la navigation, ce qui m’a permis d’apprendre à structurer une application SPA."
+    },
+        {
+      "slug": "ohmyfood",
+      "title": "OhMyFood — Mobile-first & animations",
+      "description": "Intégration mobile-first d’un site de restaurants, animations CSS (skeleton, loaders, transitions).",
+      "difficulty": "Organisation BEM, accessibilité, micro-interactions performantes.",
+      "tech": ["HTML", "Sass", "BEM", "A11y"],
+      "demo": "https://valerie2a.github.io/OpenclassroomsProject/",
+      "repo": "https://github.com/Valerie2a/OpenclassroomsProject",
+      "images": [
+        "images/projects/ohmyfood/ohmyfood-1.png",
+        "images/projects/ohmyfood/ohmyfood-2.png",
+        "images/projects/ohmyfood/ohmyfood-3.png"
+      ],
+      "imageAlt": "Captures du site OhMyFood"
     },
     {
       "slug": "argent-bank",
       "title": "Argent Bank — Tableau de bord bancaire",
       "description": "Application React + Redux Toolkit (createAsyncThunk) avec authentification JWT, édition du profil (username) et préparation des endpoints transactions (Swagger 2.0). Respect des bonnes pratiques Green Code et Vite.",
       "tech": ["React", "Redux Toolkit", "Vite", "REST API", "JWT", "Swagger"],
-      "image": "https://placehold.co/600x360?text=Argent+Bank",
-      "imageAlt": "Aperçu de l'app Argent Bank",
-      "demo": "https://TODO-demo-argent-bank",
+       "images": [
+        "images/projects/argent bank/argent bank-1.png",
+        "images/projects/argent bank/argent bank-2.png",
+        "images/projects/argent bank/argent bank-3.png"
+      ],
+      "imageAlt": "Aperçu du projet Argent Bank",
+      "demo": "https://valerie2a.github.io/argent-bank-frontend/",
       "repo": "https://github.com/Valerie2a/argent-bank-frontend.git",
       "difficulty": "La mise en œuvre de Redux et du middleware Thunk a été complexe, mais cela m’a permis de mieux comprendre la gestion d’état et les appels API asynchrones."
     },
@@ -48,20 +71,28 @@
       "title": "Booki — Intégration HTML/CSS",
       "description": "Intégration responsive à partir d’une maquette Figma, sémantique HTML et bonnes pratiques d’accessibilité.",
       "tech": ["HTML", "CSS", "Figma", "A11y"],
-      "image": "https://placehold.co/600x360?text=Booki",
+      "images": [
+        "images/projects/booki/booki-1.png",
+        "images/projects/booki/booki-2.png",
+        "images/projects/booki/booki-3.png"
+      ],
       "imageAlt": "Aperçu du projet Booki",
-      "demo": "https://TODO-demo-booki",
-      "repo": "https://github.com/TODO-username/Booki",
+      "demo": "https://valerie2a.github.io/booki",
+      "repo": "https://github.com/Valerie2a/Booki",
       "difficulty": "J’ai eu des difficultés avec la mise en place du responsive, ce qui m’a permis de progresser sur l’utilisation de Flexbox et Media Queries."
     },
     {
       "slug": "724events",
       "title": "724events — Débogage et tests React",
-      "description": "Correction de bugs (carrousel, filtres, formulaires), tests avec Testing Library, amélioration accessibilité & styles.",
+      "description": "Debug d'une application React événementielle et implémentation de tests unitaires pour valider les corrections.",
       "tech": ["React", "Testing Library", "SCSS", "Debug"],
-      "image": "https://placehold.co/600x360?text=724events",
+      "images": [
+        "images/projects/724 events/724 events-1.png",
+        "images/projects/724 events/724 events-2.png",
+        "images/projects/724 events/724 events-3.png"
+      ],
       "imageAlt": "Aperçu du projet 724events",
-      "demo": "https://TODO-demo-724events",
+      "demo": "",
       "repo": "https://github.com/TODO-username/724events",
       "difficulty": "J’ai eu du mal au départ avec les tests unitaires en React Testing Library, mais cela m’a appris à valider le bon fonctionnement de mes composants."
 },
@@ -70,22 +101,15 @@
       "title": "Nina Carducci — Site de photographe (SEO/Perf)",
       "description": "Optimisation SEO & performances : nettoyage Bootstrap, carrousel JavaScript natif, lazy‑loading, balises meta/OG, correctifs d’accessibilité. Objectif Lighthouse ≥ 95 en Perf et ≥ 100 en SEO.",
       "tech": ["HTML", "SCSS", "JavaScript", "Lighthouse", "SEO"],
-      "image": "https://placehold.co/600x360?text=Nina+Carducci",
+      "images": [
+      "images/projects/nina carducci/Nina carducci-1.png",
+      "images/projects/nina carducci/Nina carducci-2.png",
+      "images/projects/nina carducci/Nina carducci-3.png"
+      ],
       "imageAlt": "Aperçu du site Nina Carducci",
-      "demo": "https://TODO-demo-nina-carducci",
+      "demo": "https://valerie2a.github.io/ninacarducci-optimise/",
       "repo": "https://github.com/Valerie2a/ninacarducci-optimise.git",
       "difficulty": "J’ai dû analyser et corriger les points faibles identifiés par Lighthouse, ce qui m’a appris à optimiser le SEO et la performance web."
-    },
-    {
-      "slug": "portfolio",
-      "title": "Portfolio — Ce site",
-      "description": "Portfolio React (JS) alimenté par JSON, thème clair/sombre persistant, animation de fond accessible (respect de prefers‑reduced‑motion) et déploiement GitHub Pages.",
-      "tech": ["React", "Vite", "SCSS", "A11y", "GitHub Pages"],
-      "image": "https://placehold.co/600x360?text=Portfolio",
-      "imageAlt": "Aperçu du portfolio",
-      "demo": "https://<USERNAME>.github.io/<REPO>/",
-      "repo": "https://github.com/<USERNAME>/<REPO>",
-      "difficulty": "La configuration du projet et du déploiement sur GitHub Pages m’a posé problème, mais cela m’a permis de comprendre l’importance des chemins relatifs et de la configuration de Vite."
     }
   ]
 }

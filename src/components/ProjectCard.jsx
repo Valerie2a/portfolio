@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import Carousel from "./Carousel";
+import Modal from "./Modal";
 
 export default function ProjectCard({ project }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const hasImages = Array.isArray(project.images) && project.images.length > 0;
+  const previewSrc = hasImages ? project.images[0] : project.image;
+
   return (
     <article className="project" aria-labelledby={`${project.slug}-title`}>
-      <img src={project.image} alt={project.imageAlt} loading="lazy" />
+      {/* Aperçu cliquable */}
+      <img
+        src={previewSrc}
+        alt={project.imageAlt}
+        loading="lazy"
+        className="project__preview"
+        onClick={() => hasImages && setIsOpen(true)}
+        style={{ cursor: hasImages ? "pointer" : "default" }}
+      />
+
       <div className="project__body">
         <h3 id={`${project.slug}-title`}>{project.title}</h3>
-
         <p className="project__desc">{project.description}</p>
 
-        {/* --- NOUVEAU : Difficultés & apprentissages --- */}
         {project.difficulty && (
           <p className="project__difficulty">
             <span className="project__difficulty-label">Difficultés & apprentissages :</span>{" "}
@@ -36,6 +50,14 @@ export default function ProjectCard({ project }) {
           )}
         </div>
       </div>
+
+      {/* Modale plein écran avec carrousel */}
+      {isOpen && hasImages && (
+        <Modal onClose={() => setIsOpen(false)}>
+          <Carousel images={project.images} alt={project.imageAlt} className="carousel--modal" />
+        </Modal>
+      )}
     </article>
   );
 }
+

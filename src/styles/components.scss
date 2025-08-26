@@ -40,7 +40,6 @@
     display: flex;
     gap: 1rem;
 
-    /* Responsive */
     @media (max-width: 640px) { flex-direction: column; }
 
     div {
@@ -51,7 +50,7 @@
   }
 
   label {
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 0.5rem;
   }
 
@@ -60,13 +59,11 @@
     padding: 0.8rem;
     border: 1px solid $border-color;
     border-radius: 6px;
-    /* Fond clair pour meilleure lisibilité */
-    /* Si tu n'as pas $background-light, remplace par #ffffff */
     background: if(global-variable-exists(background-light), $background-light, #ffffff);
     color: $text-color;
     transition: border-color .15s ease, box-shadow .15s ease;
 
-    &:focus {
+    &:focus-visible {
       outline: 2px solid transparent; /* évite double contour */
       border-color: $primary-color;
       box-shadow: 0 0 0 3px color.mix($primary-color, transparent, 25%);
@@ -81,12 +78,13 @@
     padding: 1rem;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     color: #fff;
     transition: background .2s ease, transform .06s ease;
 
     &:hover { background: color.adjust($primary-color, $lightness: -10%); }
     &:active { transform: translateY(1px); }
+    &:focus-visible { outline: 2px solid color.adjust($primary-color, $lightness: 10%); outline-offset: 2px; }
   }
 
   /* Honeypot anti-spam (champ invisible) */
@@ -110,7 +108,6 @@
     color: $primary-color;
   }
 
-  /* Mise en forme : formation sur une ligne, école et dates à la ligne */
   .school, .dates {
     display: block; /* force le retour à la ligne */
   }
@@ -129,9 +126,10 @@
 
   a {
     color: $primary-color;
-    font-weight: bold;
+    font-weight: 700;
 
     &:hover { text-decoration: underline; }
+    &:focus-visible { outline: 2px solid $primary-color; outline-offset: 2px; border-radius: 6px; }
   }
 }
 
@@ -144,8 +142,6 @@
   align-items: center;
   gap: .75rem;
   padding: 1.25rem 1rem;
-
-  /* Fond clair et séparation subtile */
   background: if(global-variable-exists(background-light), $background-light, #f8fafc);
   color: $text-color;
   border-top: 1px solid $border-color;
@@ -167,11 +163,129 @@
         color: $primary-color;
         transform: translateY(-1px);
       }
-      &:focus {
+      &:focus-visible {
         outline: 2px solid $primary-color;
         outline-offset: 2px;
         border-radius: 6px;
       }
     }
   }
+}
+
+/* -------------------
+   Cartes projets : vignettes harmonisées
+------------------- */
+.project__preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* même hauteur partout */
+  object-fit: cover;      /* recadrage propre */
+  border-radius: 12px;
+  background: #e9ecef;    /* évite flash pendant le chargement */
+}
+@media (max-width: 640px) {
+  .project__preview { aspect-ratio: 4 / 3; }
+}
+
+/* ======================
+   Modal plein écran
+====================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 24px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  width: min(1120px, 100%);
+  max-height: 90dvh;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden; /* masque l’overflow des images/btns */
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 40px; height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+
+  &:focus-visible { outline: 2px solid $primary-color; outline-offset: 2px; }
+}
+
+/* ======================
+   Carousel (variante modale)
+====================== */
+.carousel { position: relative; }
+
+/* classe passée via className="carousel--modal" */
+.carousel--modal {
+  background: #000; /* letterboxing propre */
+
+  .carousel__img {
+    display: block;
+    width: 100%;
+    max-height: 78dvh; /* laisse de la place pour dots/compteur */
+    object-fit: contain; /* montre l’image entière */
+    background: #000;
+  }
+
+  /* Boutons de navigation */
+  .carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: 0;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    display: grid; place-items: center;
+    cursor: pointer;
+
+    &.prev { left: 12px; }
+    &.next { right: 12px; }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  }
+
+  /* Dots centrés en bas */
+  .carousel__dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 1;
+  }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    border: 1px solid #fff;
+    background: transparent;
+    opacity: .75;
+    &.active { background: #fff; opacity: 1; }
+  }
+}
+
+/* Animations discrètes (respecte les préférences) */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
