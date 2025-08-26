@@ -35,7 +35,9 @@ export default function Carousel({ images = [], alt, className = "" }) {
         src={images[current]}
         alt={alt || `Image ${current + 1}`}
         className="carousel__img"
-        loading="lazy"
+        loading="eager"
+        width="800"
+        height="450"
       />
 
       {/* Bouton suivant */}

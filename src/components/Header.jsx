@@ -39,6 +39,7 @@ export default function Header() {
           
           <div className="actions">
             <a className="btn" href="#projects">Voir mes projets</a>
+            <a href="/portfolio/cv-valerie-cote.pdf" target="_blank" rel="noopener noreferrer" class="btn">Télécharger mon CV</a>
             <a className="btn btn--ghost" href="#contact">Me contacter</a>
           </div>
         </div>

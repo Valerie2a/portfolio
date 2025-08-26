@@ -91,10 +91,24 @@ a {
 
 .actions {
   display: flex;
+  flex-direction: row;
   gap: .75rem;
   margin-top: 1rem;
 }
-
+@media (min-width: 350px) {
+  .actions {
+    flex-direction: column;
+    width:auto;
+  }
+}
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+  .actions .btn {
+  padding: 1rem 2rem; /* plus large visuellement */
+}
+}
 .theme-toggle {
   background: var(--bg-elev);
   border: none;
@@ -131,14 +145,19 @@ a {
   opacity: .15;
   animation: rise var(--dur) linear forwards;
   filter: blur(0.5px);
+  
+  /* Optimisations performance */
+  will-change: transform;
+  transform: translateZ(0); 
+  backface-visibility: hidden;
 }
 
 @keyframes rise {
   from {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) translateZ(0);
   }
   to {
-    transform: translateY(-110vh) scale(1.2);
+    transform: translateY(-110vh) scale(1.2) translateZ(0);
   }
 }
 
