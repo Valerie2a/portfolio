@@ -9,7 +9,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  color: $text-color;
+  color: $primary-color;
 
   h2 {
     font-size: 2rem;
@@ -78,6 +78,8 @@
 
   textarea {
     min-height: 120px;
+    width: 100%;       
+    resize: vertical; 
   }
 
   button {
@@ -141,6 +143,7 @@
     font-size: 1rem;
     color: $secondary-color;
     margin-top: .15rem;
+    font-weight: 600;
   }
 
   a {
@@ -179,7 +182,7 @@
     margin-left: .5rem;
 
     a {
-      color: $text-color;
+      color: $muted;
       font-size: 1.4rem; /* taille des icônes react-icons */
       display: inline-flex;
       align-items: center;
